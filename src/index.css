@@ -1,3 +1,205 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Dark Mode Styles */
+.dark-mode {
+  /* Background Colors */
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-tertiary: #2d2d2d;
+  
+  /* Text Colors */
+  --text-primary: #f0f0f0;
+  --text-secondary: #b3b3b3;
+  --text-muted: #8a8a8a;
+  
+  /* Card Backgrounds */
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-bg-hover: rgba(255, 255, 255, 0.08);
+  --card-border: rgba(255, 255, 255, 0.1);
+  
+  /* Glass Effect */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+  --gradient-secondary: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(99, 102, 241, 0.05) 100%);
+}
+
+/* Apply dark mode styles */
+.dark-mode {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Dark mode card styles */
+.dark-mode .bg-white\/60 {
+  background-color: var(--card-bg) !important;
+  border-color: var(--card-border) !important;
+}
+
+.dark-mode .bg-white\/40 {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+.dark-mode .bg-white\/80 {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark-mode .bg-white\/20 {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* Dark mode text colors */
+.dark-mode .text-gray-800 {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .text-gray-700 {
+  color: var(--text-secondary) !important;
+}
+
+.dark-mode .text-gray-600 {
+  color: var(--text-muted) !important;
+}
+
+.dark-mode .text-gray-500 {
+  color: #6b7280 !important;
+}
+
+/* Dark mode borders */
+.dark-mode .border-white\/20 {
+  border-color: var(--card-border) !important;
+}
+
+.dark-mode .border-white\/30 {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.dark-mode .border-gray-200 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Dark mode shadows */
+.dark-mode .shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark-mode .shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Dark mode hover effects */
+.dark-mode .hover\:bg-white\/60:hover {
+  background-color: var(--card-bg-hover) !important;
+}
+
+.dark-mode .hover\:bg-white\/80:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Dark mode specific gradient backgrounds */
+.dark-mode .from-green-50\/80 {
+  --tw-gradient-from: rgba(34, 197, 94, 0.1) !important;
+}
+
+.dark-mode .from-blue-50\/80 {
+  --tw-gradient-from: rgba(59, 130, 246, 0.1) !important;
+}
+
+.dark-mode .from-purple-50\/80 {
+  --tw-gradient-from: rgba(147, 51, 234, 0.1) !important;
+}
+
+.dark-mode .from-yellow-50\/80 {
+  --tw-gradient-from: rgba(245, 158, 11, 0.1) !important;
+}
+
+.dark-mode .from-red-50\/80 {
+  --tw-gradient-from: rgba(239, 68, 68, 0.1) !important;
+}
+
+/* Dark mode placeholder text */
+.dark-mode .placeholder-gray-500::placeholder {
+  color: #9ca3af !important;
+}
+
+.dark-mode .placeholder-gray-400::placeholder {
+  color: #9ca3af !important;
+}
+
+/* Dark mode input backgrounds */
+.dark-mode input {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-mode input:focus {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(34, 197, 94, 0.5) !important;
+}
+
+/* Dark mode select elements */
+.dark-mode select {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-mode select option {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Dark mode button hover states */
+.dark-mode .hover\:bg-green-50\/50:hover {
+  background-color: rgba(34, 197, 94, 0.1) !important;
+}
+
+.dark-mode .hover\:bg-blue-50\/50:hover {
+  background-color: rgba(59, 130, 246, 0.1) !important;
+}
+
+.dark-mode .hover\:bg-red-50\/50:hover {
+  background-color: rgba(239, 68, 68, 0.1) !important;
+}
+
+/* Dark mode progress bars */
+.dark-mode .bg-gray-200 {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-mode .bg-gray-200\/60 {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Dark mode chart backgrounds */
+.dark-mode canvas {
+  filter: brightness(0.9) contrast(1.1);
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Dark mode scrollbar */
+.dark-mode::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark-mode::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+.dark-mode::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.dark-mode::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
