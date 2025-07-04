@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage = 'Dashboard', onNavigate }
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = ['Dashboard', 'Impact', 'Rewards', 'Knowledge', 'Community', 'Profile'];
+  const navItems = ['Dashboard', 'Impact', 'Map', 'Rewards', 'Knowledge', 'Community', 'Profile'];
 
   const handleNavClick = (item: string) => {
     if (onNavigate) {

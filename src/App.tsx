@@ -12,6 +12,7 @@ import RewardsPage from './components/RewardsPage';
 import KnowledgeHub from './components/KnowledgeHub';
 import AuthPage from './components/AuthPage';
 import CommunityPage from './components/CommunityPage';
+import EcoMap from './components/EcoMap';
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -39,6 +40,16 @@ function App() {
   // Render Auth page
   if (currentPage === 'auth') {
     return <AuthPage />;
+  }
+
+  // Render EcoMap page
+  if (currentPage === 'map') {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50/30">
+        <Header currentPage="Map" onNavigate={handleNavigation} />
+        <EcoMap />
+      </div>
+    );
   }
 
   // Render Community page
