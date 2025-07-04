@@ -17,15 +17,8 @@ import EcoMap from './components/EcoMap';
 function App() {
   const [isVisible, setIsVisible] = useState(false);
   const [currentPage, setCurrentPage] = useState<string>('Dashboard');
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    // Check for saved dark mode preference
-    const savedDarkMode = localStorage.getItem('darkMode');
-    if (savedDarkMode) {
-      setIsDarkMode(JSON.parse(savedDarkMode));
-    }
-
     // Trigger entrance animations
     const timer = setTimeout(() => {
       setIsVisible(true);
@@ -33,18 +26,6 @@ function App() {
 
     return () => clearTimeout(timer);
   }, []);
-
-  useEffect(() => {
-    // Apply dark mode class to document
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark-mode');
-    } else {
-      document.documentElement.classList.remove('dark-mode');
-    }
-
-    // Save dark mode preference
-    localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
-  }, [isDarkMode]);
 
   const handleNavigation = (page: string) => {
     setCurrentPage(page);
@@ -56,24 +37,16 @@ function App() {
     }, 100);
   };
 
-  const handleToggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
   // Render Auth page
   if (currentPage === 'auth') {
-    return (
-      <div className={`transition-colors duration-300 ${isDarkMode ? 'dark-mode' : ''}`}>
-        <AuthPage />
-      </div>
-    );
+    return <AuthPage />;
   }
 
   // Render EcoMap page
   if (currentPage === 'map') {
     return (
-      <div className={`min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-green-900/30 transition-colors duration-300 ${isDarkMode ? 'dark-mode' : ''}`}>
-        <Header currentPage="Map" onNavigate={handleNavigation} isDarkMode={isDarkMode} onToggleDarkMode={handleToggleDarkMode} />
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50/30">
+        <Header currentPage="Map" onNavigate={handleNavigation} />
         <EcoMap />
       </div>
     );
@@ -82,8 +55,8 @@ function App() {
   // Render Community page
   if (currentPage === 'community') {
     return (
-      <div className={`min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-green-900/30 transition-colors duration-300 ${isDarkMode ? 'dark-mode' : ''}`}>
-        <Header currentPage="Community" onNavigate={handleNavigation} isDarkMode={isDarkMode} onToggleDarkMode={handleToggleDarkMode} />
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50/30">
+        <Header currentPage="Community" onNavigate={handleNavigation} />
         <CommunityPage />
       </div>
     );
@@ -92,8 +65,8 @@ function App() {
   // Render Knowledge Hub page
   if (currentPage === 'knowledge') {
     return (
-      <div className={`min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-green-900/30 transition-colors duration-300 ${isDarkMode ? 'dark-mode' : ''}`}>
-        <Header currentPage="Knowledge" onNavigate={handleNavigation} isDarkMode={isDarkMode} onToggleDarkMode={handleToggleDarkMode} />
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50/30">
+        <Header currentPage="Knowledge" onNavigate={handleNavigation} />
         <KnowledgeHub />
       </div>
     );
@@ -102,8 +75,8 @@ function App() {
   // Render Rewards page
   if (currentPage === 'rewards') {
     return (
-      <div className={`min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-green-900/30 transition-colors duration-300 ${isDarkMode ? 'dark-mode' : ''}`}>
-        <Header currentPage="Rewards" onNavigate={handleNavigation} isDarkMode={isDarkMode} onToggleDarkMode={handleToggleDarkMode} />
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50/30">
+        <Header currentPage="Rewards" onNavigate={handleNavigation} />
         <RewardsPage />
       </div>
     );
@@ -112,8 +85,8 @@ function App() {
   // Render Profile Setup page
   if (currentPage === 'profile') {
     return (
-      <div className={`min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-green-900/30 transition-colors duration-300 ${isDarkMode ? 'dark-mode' : ''}`}>
-        <Header currentPage="Profile" onNavigate={handleNavigation} isDarkMode={isDarkMode} onToggleDarkMode={handleToggleDarkMode} />
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50/30">
+        <Header currentPage="Profile" onNavigate={handleNavigation} />
         <ProfileSetup />
       </div>
     );
@@ -122,8 +95,8 @@ function App() {
   // Render Impact Tracker page
   if (currentPage === 'impact') {
     return (
-      <div className={`min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-green-900/30 transition-colors duration-300 ${isDarkMode ? 'dark-mode' : ''}`}>
-        <Header currentPage="Impact" onNavigate={handleNavigation} isDarkMode={isDarkMode} onToggleDarkMode={handleToggleDarkMode} />
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50/30">
+        <Header currentPage="Impact" onNavigate={handleNavigation} />
         <ImpactTracker />
       </div>
     );
@@ -131,8 +104,8 @@ function App() {
 
   // Render Dashboard (default page)
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-green-900/30 transition-colors duration-300 ${isDarkMode ? 'dark-mode' : ''}`}>
-      <Header currentPage="Dashboard" onNavigate={handleNavigation} isDarkMode={isDarkMode} onToggleDarkMode={handleToggleDarkMode} />
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50/30">
+      <Header currentPage="Dashboard" onNavigate={handleNavigation} />
       
       {/* Add top padding to account for fixed header */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-24">
@@ -140,10 +113,10 @@ function App() {
           
           {/* Welcome Section */}
           <div className="mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-gray-100 mb-4 bg-gradient-to-r from-green-600 to-emerald-600 dark:from-green-400 dark:to-emerald-400 bg-clip-text text-transparent transition-colors duration-300">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
               Welcome back, Sarah!
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 font-medium transition-colors duration-300">
+            <p className="text-xl text-gray-600 font-medium">
               Your eco-friendly journey continues. Every small action makes a big difference.
             </p>
           </div>
