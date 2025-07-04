@@ -45,7 +45,7 @@ function App() {
   // Render EcoMap page
   if (currentPage === 'map') {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50/30">
+      <div className="min-h-screen gradient-theme-bg">
         <Header currentPage="Map" onNavigate={handleNavigation} />
         <EcoMap />
       </div>
@@ -55,7 +55,7 @@ function App() {
   // Render Community page
   if (currentPage === 'community') {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50/30">
+      <div className="min-h-screen gradient-theme-bg">
         <Header currentPage="Community" onNavigate={handleNavigation} />
         <CommunityPage />
       </div>
@@ -65,7 +65,7 @@ function App() {
   // Render Knowledge Hub page
   if (currentPage === 'knowledge') {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50/30">
+      <div className="min-h-screen gradient-theme-bg">
         <Header currentPage="Knowledge" onNavigate={handleNavigation} />
         <KnowledgeHub />
       </div>
@@ -75,7 +75,7 @@ function App() {
   // Render Rewards page
   if (currentPage === 'rewards') {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50/30">
+      <div className="min-h-screen gradient-theme-bg">
         <Header currentPage="Rewards" onNavigate={handleNavigation} />
         <RewardsPage />
       </div>
@@ -85,7 +85,7 @@ function App() {
   // Render Profile Setup page
   if (currentPage === 'profile') {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50/30">
+      <div className="min-h-screen gradient-theme-bg">
         <Header currentPage="Profile" onNavigate={handleNavigation} />
         <ProfileSetup />
       </div>
@@ -95,7 +95,7 @@ function App() {
   // Render Impact Tracker page
   if (currentPage === 'impact') {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50/30">
+      <div className="min-h-screen gradient-theme-bg">
         <Header currentPage="Impact" onNavigate={handleNavigation} />
         <ImpactTracker />
       </div>
@@ -104,7 +104,7 @@ function App() {
 
   // Render Dashboard (default page)
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50/30">
+    <div className="min-h-screen gradient-theme-bg">
       <Header currentPage="Dashboard" onNavigate={handleNavigation} />
       
       {/* Add top padding to account for fixed header */}
@@ -113,10 +113,10 @@ function App() {
           
           {/* Welcome Section */}
           <div className="mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold text-theme-primary mb-4 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
               Welcome back, Sarah!
             </h1>
-            <p className="text-xl text-gray-600 font-medium">
+            <p className="text-xl text-theme-secondary font-medium">
               Your eco-friendly journey continues. Every small action makes a big difference.
             </p>
           </div>

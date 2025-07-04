@@ -54,4 +54,5 @@ export default {
     },
   },
   plugins: [],
+  darkMode: ['class', '[data-theme="dark"]'],
 };
