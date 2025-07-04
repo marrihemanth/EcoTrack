@@ -10,6 +10,8 @@ import ImpactTracker from './components/ImpactTracker';
 import ProfileSetup from './components/ProfileSetup';
 import RewardsPage from './components/RewardsPage';
 import KnowledgeHub from './components/KnowledgeHub';
+import AuthPage from './components/AuthPage';
+import CommunityPage from './components/CommunityPage';
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -33,6 +35,21 @@ function App() {
       setIsVisible(true);
     }, 100);
   };
+
+  // Render Auth page
+  if (currentPage === 'auth') {
+    return <AuthPage />;
+  }
+
+  // Render Community page
+  if (currentPage === 'community') {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50/30">
+        <Header currentPage="Community" onNavigate={handleNavigation} />
+        <CommunityPage />
+      </div>
+    );
+  }
 
   // Render Knowledge Hub page
   if (currentPage === 'knowledge') {

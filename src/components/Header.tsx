@@ -30,6 +30,12 @@ const Header: React.FC<HeaderProps> = ({ currentPage = 'Dashboard', onNavigate }
     setIsMobileMenuOpen(false);
   };
 
+  const handleAuthClick = () => {
+    if (onNavigate) {
+      onNavigate('auth');
+    }
+  };
+
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
@@ -129,7 +135,10 @@ const Header: React.FC<HeaderProps> = ({ currentPage = 'Dashboard', onNavigate }
             </button>
 
             {/* Auth Button (Desktop) */}
-            <button className="hidden sm:inline-flex items-center px-6 py-2.5 rounded-full bg-gradient-to-r from-green-700 to-green-500 text-white font-semibold hover:from-green-800 hover:to-green-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-green-500/25">
+            <button 
+              onClick={handleAuthClick}
+              className="hidden sm:inline-flex items-center px-6 py-2.5 rounded-full bg-gradient-to-r from-green-700 to-green-500 text-white font-semibold hover:from-green-800 hover:to-green-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-green-500/25"
+            >
               <User className="h-4 w-4 mr-2" />
               Login | Sign Up
             </button>
@@ -183,7 +192,10 @@ const Header: React.FC<HeaderProps> = ({ currentPage = 'Dashboard', onNavigate }
 
             {/* Mobile Auth Button */}
             <div className="px-4 pt-4">
-              <button className="w-full flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-green-700 to-green-500 text-white font-semibold hover:from-green-800 hover:to-green-600 transition-all duration-300">
+              <button 
+                onClick={handleAuthClick}
+                className="w-full flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-green-700 to-green-500 text-white font-semibold hover:from-green-800 hover:to-green-600 transition-all duration-300"
+              >
                 <User className="h-4 w-4 mr-2" />
                 Login | Sign Up
               </button>
