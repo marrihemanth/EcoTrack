@@ -114,12 +114,12 @@ const Header: React.FC<HeaderProps> = ({ currentPage = 'Dashboard', onNavigate }
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-6">
+          <nav className="hidden lg:flex items-center space-x-1">
             {navItems.map((item) => (
               <button
                 key={item}
                 onClick={() => handleNavClick(item)}
-                className={`relative px-6 py-3 text-sm font-medium transition-all duration-300 group whitespace-nowrap ${
+                className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 group ${
                   currentPage === item 
                     ? 'text-green-theme' 
                     : 'text-theme-secondary hover:text-green-theme'
