@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import EcoImpactSummary from './components/EcoImpactSummary';
 import WeeklyPerformanceChart from './components/WeeklyPerformanceChart';
 import StreakGoalsSection from './components/StreakGoalsSection';
@@ -39,131 +40,157 @@ function App() {
 
   // Render Auth page
   if (currentPage === 'auth') {
-    return <AuthPage />;
+    return (
+      <>
+        <AuthPage />
+        <Footer />
+      </>
+    );
   }
 
   // Render EcoMap page
   if (currentPage === 'map') {
     return (
-      <div className="min-h-screen gradient-theme-bg">
-        <Header currentPage="Map" onNavigate={handleNavigation} />
-        <EcoMap />
-      </div>
+      <>
+        <div className="min-h-screen gradient-theme-bg">
+          <Header currentPage="Map" onNavigate={handleNavigation} />
+          <EcoMap />
+        </div>
+        <Footer />
+      </>
     );
   }
 
   // Render Community page
   if (currentPage === 'events and ngo collab') {
     return (
-      <div className="min-h-screen gradient-theme-bg">
-        <Header currentPage="Events and NGO Collab" onNavigate={handleNavigation} />
-        <CommunityPage />
-      </div>
+      <>
+        <div className="min-h-screen gradient-theme-bg">
+          <Header currentPage="Events and NGO Collab" onNavigate={handleNavigation} />
+          <CommunityPage />
+        </div>
+        <Footer />
+      </>
     );
   }
 
   // Render Knowledge Hub page
   if (currentPage === 'knowledge') {
     return (
-      <div className="min-h-screen gradient-theme-bg">
-        <Header currentPage="Knowledge" onNavigate={handleNavigation} />
-        <KnowledgeHub />
-      </div>
+      <>
+        <div className="min-h-screen gradient-theme-bg">
+          <Header currentPage="Knowledge" onNavigate={handleNavigation} />
+          <KnowledgeHub />
+        </div>
+        <Footer />
+      </>
     );
   }
 
   // Render Rewards page
   if (currentPage === 'rewards') {
     return (
-      <div className="min-h-screen gradient-theme-bg">
-        <Header currentPage="Rewards" onNavigate={handleNavigation} />
-        <RewardsPage />
-      </div>
+      <>
+        <div className="min-h-screen gradient-theme-bg">
+          <Header currentPage="Rewards" onNavigate={handleNavigation} />
+          <RewardsPage />
+        </div>
+        <Footer />
+      </>
     );
   }
 
   // Render Profile Setup page
   if (currentPage === 'profile') {
     return (
-      <div className="min-h-screen gradient-theme-bg">
-        <Header currentPage="Profile" onNavigate={handleNavigation} />
-        <ProfileSetup />
-      </div>
+      <>
+        <div className="min-h-screen gradient-theme-bg">
+          <Header currentPage="Profile" onNavigate={handleNavigation} />
+          <ProfileSetup />
+        </div>
+        <Footer />
+      </>
     );
   }
 
   // Render Impact Tracker page
   if (currentPage === 'carbon tracker') {
     return (
-      <div className="min-h-screen gradient-theme-bg">
-        <Header currentPage="Carbon Tracker" onNavigate={handleNavigation} />
-        <ImpactTracker />
-      </div>
+      <>
+        <div className="min-h-screen gradient-theme-bg">
+          <Header currentPage="Carbon Tracker" onNavigate={handleNavigation} />
+          <ImpactTracker />
+        </div>
+        <Footer />
+      </>
     );
   }
 
   // Render Dashboard (default page)
   return (
-    <div className="min-h-screen gradient-theme-bg">
-      <Header currentPage="Dashboard" onNavigate={handleNavigation} />
-      
-      {/* Add top padding to account for fixed header */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-24">
-        <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          
-          {/* Welcome Section */}
-          <div className="mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-theme-primary mb-4 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-              Welcome back, Sarah!
-            </h1>
-            <p className="text-xl text-theme-secondary font-medium">
-              Your eco-friendly journey continues. Every small action makes a big difference.
-            </p>
-          </div>
-
-          {/* Eco Impact Summary Panel */}
-          <div className={`transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <EcoImpactSummary />
-          </div>
-
-          {/* Main Dashboard Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+    <>
+      <div className="min-h-screen gradient-theme-bg">
+        <Header currentPage="Dashboard" onNavigate={handleNavigation} />
+        
+        {/* Add top padding to account for fixed header */}
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-24">
+          <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             
-            {/* Left Column */}
-            <div className="space-y-8">
-              {/* Weekly Performance Chart */}
-              <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                <WeeklyPerformanceChart />
+            {/* Welcome Section */}
+            <div className="mb-12">
+              <h1 className="text-4xl md:text-5xl font-bold text-theme-primary mb-4 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                Welcome back, Sarah!
+              </h1>
+              <p className="text-xl text-theme-secondary font-medium">
+                Your eco-friendly journey continues. Every small action makes a big difference.
+              </p>
+            </div>
+
+            {/* Eco Impact Summary Panel */}
+            <div className={`transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <EcoImpactSummary />
+            </div>
+
+            {/* Main Dashboard Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+              
+              {/* Left Column */}
+              <div className="space-y-8">
+                {/* Weekly Performance Chart */}
+                <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                  <WeeklyPerformanceChart />
+                </div>
+
+                {/* Streak & Goals Section */}
+                <div className={`transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                  <StreakGoalsSection />
+                </div>
               </div>
 
-              {/* Streak & Goals Section */}
-              <div className={`transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                <StreakGoalsSection />
+              {/* Right Column */}
+              <div className="space-y-8">
+                {/* Daily Eco Tip */}
+                <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                  <DailyEcoTip />
+                </div>
+
+                {/* Achievements Preview */}
+                <div className={`transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                  <AchievementsPreview />
+                </div>
               </div>
             </div>
 
-            {/* Right Column */}
-            <div className="space-y-8">
-              {/* Daily Eco Tip */}
-              <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                <DailyEcoTip />
-              </div>
-
-              {/* Achievements Preview */}
-              <div className={`transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                <AchievementsPreview />
-              </div>
+            {/* Community Stats Section */}
+            <div className={`transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <CommunityStats />
             </div>
-          </div>
 
-          {/* Community Stats Section */}
-          <div className={`transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <CommunityStats />
           </div>
-
-        </div>
-      </main>
-    </div>
+        </main>
+      </div>
+      <Footer />
+    </>
   );
 }
 
