@@ -34,6 +34,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage = 'Dashboard', onNavigate }
   }, []);
 
   const navItems = ['Dashboard', 'Impact', 'Map', 'Rewards', 'Knowledge', 'Community', 'Profile'];
+  const navItems = ['Dashboard', 'Carbon Tracker', 'Map', 'Rewards', 'Knowledge', 'Events and NGO Collab', 'Profile'];
 
   const handleNavClick = (item: string) => {
     if (onNavigate) {

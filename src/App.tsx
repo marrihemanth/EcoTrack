@@ -53,10 +53,10 @@ function App() {
   }
 
   // Render Community page
-  if (currentPage === 'community') {
+  if (currentPage === 'events and ngo collab') {
     return (
       <div className="min-h-screen gradient-theme-bg">
-        <Header currentPage="Community" onNavigate={handleNavigation} />
+        <Header currentPage="Events and NGO Collab" onNavigate={handleNavigation} />
         <CommunityPage />
       </div>
     );
@@ -93,10 +93,10 @@ function App() {
   }
 
   // Render Impact Tracker page
-  if (currentPage === 'impact') {
+  if (currentPage === 'carbon tracker') {
     return (
       <div className="min-h-screen gradient-theme-bg">
-        <Header currentPage="Impact" onNavigate={handleNavigation} />
+        <Header currentPage="Carbon Tracker" onNavigate={handleNavigation} />
         <ImpactTracker />
       </div>
     );
